@@ -50,13 +50,13 @@ Esses códigos instruem o cliente a realizar outra ação.
 ### ``Resumo das Categorias``  
 | Categoria         | Códigos         | Exemplos                    |
 |-------------------|-----------------|-----------------------------|
-| Informativo       | ``1xx``         | 100, 101                   |
-| Sucesso           | ``2xx``         | 200, 201, 204              |
-| Redirecionamento  | ``3xx``         | 301, 302, 304              |
-| Lado do Cliente   | ``4xx``         | 400, 401, 403, 404, 422, 429    |
-| Lado do Servidor  | ``5xx``         | 500, 501, 502, 503, 504    |
+| Informativo       | ``1xx``         | 100, 101                    |
+| Sucesso           | ``2xx``         | 200, 201, 204               |
+| Redirecionamento  | ``3xx``         | 301, 302, 304               |
+| Lado do Cliente   | ``4xx``         | 400, 401, 403, 404, 422, 429|
+| Lado do Servidor  | ``5xx``         | 500, 501, 502, 503, 504     |
 
-### ``Básico``
+### ``Pra gravar``
 ``2xx`` : Sucesso [ Você pediu para o backend fazer algo e ele respondeu que deu certo ] 
 
 ``4xx`` : ERRO CLIENTE (Frontend) [ O cliente tenta acessar uma rota que não existe ou não permitida ]

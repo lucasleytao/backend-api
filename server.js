@@ -26,12 +26,28 @@ app.post('/usuarios', async (req, res) => { //cria um novo usuario
 
 app.get('/usuarios', async (req, res) => { //lista usuarios
     // res.send('Enviando resposta GET para o cliente') //metodo send() do express
+    // console.log(req)
 
-    const allUsers = await prisma.user.findMany({
+    let filter = []
 
-    })
+    if (req.query) {
+        filter = await prisma.user.findMany({
+            where: {
+                name: req.query.name, //retorna usuario onde name = req.query.name
+                email: req.query.email,
+                age: req.query.age
+            }
+        })
+    } else {
+        filter = await prisma.user.findMany()
+    }
 
-    res.status(200).json(allUsers) //responde com json(todos os usuarios) rota de listagem
+    // const allUsers = await prisma.user.findMany({
+
+    // })
+
+    // res.status(200).json(allUsers) //responde com json(todos os usuarios) rota de listagem
+    res.status(200).json(filter) //responde com json(filtro de usuario)
 })
 
 app.put('/usuarios/:id', async (req, res) => { //cria um novo usuario
